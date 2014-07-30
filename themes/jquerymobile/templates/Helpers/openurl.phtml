@@ -1,0 +1,16 @@
+<a rel="external" href="<?=$this->escapeHtml($this->openUrlBase . '?' . $this->openUrl)?>">
+  <? if ($this->openUrlGraphic): ?>
+    <?
+        $style = '';
+        if ($this->openUrlGraphicWidth) {
+            $style .= 'width:' . $this->escapeHtml($this->openUrlGraphicWidth) . 'px;';
+        }
+        if ($this->openUrlGraphicHeight) {
+            $style .= 'height:' . $this->escapeHtml($this->openUrlGraphicHeight) . 'px;';
+        }
+    ?>
+    <img src="<?=$this->escapeHtml($this->openUrlGraphic)?>" alt="<?=$this->transEsc('Get full text')?>" style="<?=$style?>" />
+  <? else: ?>
+    <?=$this->transEsc('Get full text')?>
+  <? endif; ?>
+</a>
